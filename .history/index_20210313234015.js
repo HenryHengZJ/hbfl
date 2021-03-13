@@ -6,17 +6,17 @@ const { init: queueInit } = require('./lib/data/lib/sqs.listener')
 
 const options = {
   port: process.env.PORT || 3000,
-  // // Commented out until Elasticache is configured
-  // cache: [{
-  //   name: 'redis',
-  //   provider: {
-  //     constructor: require('@hapi/catbox-redis'),
-  //     options: {
-  //       partition: 'cache',
-  //       host: 'your elasticache domain here',
-  //     }
-  //   }
-  // }]
+  // Commented out until Elasticache is configured
+  cache: [{
+    name: 'redis',
+    provider: {
+      constructor: require('@hapi/catbox-redis'),
+      options: {
+        partition: 'cache',
+         host: 'hamster.fqozaz.0001.usw2.cache.amazonaws.com',
+      }
+    }
+  }]
 }
 
 const init = async () => {
